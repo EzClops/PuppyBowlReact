@@ -4,7 +4,39 @@
   padding: 2rem;
   text-align: center;
 }
-
+table{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+table thead tr th{
+  text-align: center;
+}
+table tbody{
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr; 
+  grid-template-rows: 1fr 1fr 1fr; 
+  gap: 15px 15px; 
+  grid-template-areas: 
+    ". . ."
+    ". . ."
+    ". . .";
+}
+table tbody tr{
+  margin: 35px;
+}
+table tbody tr .attributes{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  
+}
+table tbody tr img{
+  height: 200px;
+  width: 200px;
+}
 .logo {
   height: 6em;
   padding: 1.5em;
