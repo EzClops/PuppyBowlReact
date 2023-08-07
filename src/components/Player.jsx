@@ -12,10 +12,6 @@ export default function Player({ player, setPlayerList }){
     
     const [playerDetail, setPlayerDetail] = useState("hi");
 
-    function refreshPage(){ 
-        window.location.reload(); 
-    }
-
     useEffect(() =>{
         async function fetchPlayerDetail(){
             try{
@@ -57,8 +53,6 @@ export default function Player({ player, setPlayerList }){
         deletePlayer();  
     })
     
-
-
     return(
         <>
             <tr>
@@ -68,24 +62,15 @@ export default function Player({ player, setPlayerList }){
                     <td>Status: {player.status}</td>
                 </div>
                 <img alt="doggie" src={player.imageUrl}></img>
-                <button onClick={() => navigate(`/player${player.id}`)}>
-                    <Link to={`/player${player.id}`}>Details</Link>
-                    <Routes>
-                        <Route path={`/player${player.id}`} element={<Details key={`/player${player.id}`} player={playerDetail}></Details>}/>
-
-                    </Routes>
-                </button>
-                <button onClick={() =>{ 
-                    fetchRequest();
-                    // refreshPage();
-                    // <PlayerDelete key={player.id}></PlayerDelete>
-                    // deletePlayer()
-                    // navigate('/players');
-                }}>
-                
-                    Delete
-                </button>
-                
+                <div className="buttons">
+                    <button onClick={() => navigate(`/player${player.id}`)}>
+                        <Link to={`/player${player.id}`}>Details</Link>
+                        <Routes>
+                            <Route path={`/player${player.id}`} element={<Details key={`/player${player.id}`} player={playerDetail}></Details>}/>
+                        </Routes>
+                    </button>
+                    <button onClick={() =>{ fetchRequest();}}> Delete</button>
+                </div>
             </tr>
         </>
     )
