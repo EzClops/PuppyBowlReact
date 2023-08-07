@@ -30,7 +30,7 @@ export default function PlayerList(){
         <>
             <PlayerForm setPlayerList={setPlayerList}></PlayerForm>
             <PlayerSearch playerList={playerList} setPlayerList={setPlayerList}></PlayerSearch>
-            <table style={{overflowY: 'scroll', border: '1px solid black', height: '600px'}}>
+            <table>
                 <thead>
                     <tr>
                         <th>Player</th>
